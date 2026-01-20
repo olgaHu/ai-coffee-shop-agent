@@ -1,27 +1,18 @@
 # AI 咖啡店智能助理（AI Coffee Shop Agent）
 咖啡店智能助理 結合 **AI Agent、RAG（Retrieval-Augmented Generation）** 與 **Tool Calling**
 的 Side Project。
-
-這是一個展示 **AI Agent 架構設計能力** 的 Side Project。
-
-本專案先使用 n8n 建立 POC:
-- AI Agent 的意圖判斷能力
-- RAG（菜單知識查詢）
-- Tool Calling（訂位等實際業務動作）
 ---
 
 ## 🔍 POC 架構總覽（n8n）
 
 > 第一階段（POC）的 AI Agent 實際運作流程
 
-![AI Agent POC Overview](./n8n-agent-overview.png)
+![AI Agent POC Overview](n8n-ai-agent-overview.png)
 
-流程：
 - 使用者以自然語言互動
-- AI Agent 判斷是「查詢」或「動作」
-- 查詢走 RAG，動作走 Tool
-- 業務邏輯與 AI 推理分離
-
+- AI Agent 的意圖判斷能力
+- RAG（菜單知識查詢）
+- Tool Calling（訂位等實際業務動作）
 
 ## 🎯 專案目標
 
@@ -32,7 +23,6 @@
 - 🧠 AI Agent 能根據使用者意圖，自行判斷要「回答問題」或「執行動作」
 
 本專案會先以 **n8n 做 POC 驗證**，再 **遷移到 Java Spring Boot 後端實作**。
-
 
 ---
 
@@ -59,12 +49,3 @@
 - Vector DB（pgvector / Qdrant）
 
 ---
-
-## 🗂 專案結構
-
-```text
-ai-coffee-shop-agent/
-├─ docs/                # 架構與設計說明
-├─ poc-n8n/             # n8n POC（截圖、流程）
-├─ backend/             # Java Spring Boot（規劃中）
-└─ README.md
