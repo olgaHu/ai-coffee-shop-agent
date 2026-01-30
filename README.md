@@ -3,9 +3,9 @@
 的 Side Project。
 ---
 
-## 🔍 POC 架構總覽（n8n）
+## 🔍架構演進總覽（POC → Backend）
 
-> 第一階段（POC）的 AI Agent 實際運作流程
+> Phase 1 :（POC）以 n8n 快速驗證 AI Agent 的行為與互動流程
 
 ![AI Agent POC Overview](n8n-ai-agent-overview.png)
 
@@ -14,15 +14,29 @@
 - RAG（菜單知識查詢）
 - Tool Calling（訂位等實際業務動作）
 
+> Phase 2 : Java Backend + Vector DB （目前進度）
+- 📚 Menu 向量資料注入
+  - 使用 OpenAI Embeddings（1536-dim）
+  - 自製 QdrantHttpClient 將資料 Upsert 至 Qdrant
+- 🔠 向量搜尋（Qdrant）(菜單 Menu Search + Order Confirm API)
+  - 實作語意相似度搜尋（Top-K）
+  - 回傳結構化菜單資料作為 AI Agent 的 唯一菜單資料來源 
+
 ## 🎯 專案目標
 
-打造一個「**可實際應用、可逐步擴充**」的咖啡店 AI 助理，具備：
+先以 **n8n 做 POC 驗證**，再 **逐步遷移到 Java Spring Boot 後端實作**：
 
-- 📖 **菜單查詢 / 問答（RAG）**
-- 🪑 **訂位處理（Tool Calling）**
-- 🧠 AI Agent 能根據使用者意圖，自行判斷要「回答問題」或「執行動作」
+- **Menu Semantic Search（RAG）**
+  - Java Backend 將菜單資料向量化並存於 Qdrant
+  - 提供 API 作為唯一菜單查詢介面
 
-本專案會先以 **n8n 做 POC 驗證**，再 **遷移到 Java Spring Boot 後端實作**。
+- **Action Execution via Tool Calling**
+  - AI Agent 依使用者意圖，呼叫後端 API（如 `menuSearch`, `orderConfirm`）
+  - 將「理解（AI）」與「執行（Backend）」明確分離
+
+- **Progressive Architecture**
+  - 初期以 n8n 承擔 AI Agent 決策角色
+  - 架構設計可平滑遷移至純 Java-based AI Agent
 
 ---
 
@@ -30,8 +44,15 @@
 
 - **AI Agent**：負責理解使用者意圖與決策
 - **RAG**：用向量資料庫查詢咖啡店菜單與知識
-- **Tool Calling**：當使用者要訂位時，AI 呼叫實際的業務工具
-- **AI 與業務邏輯分離**：方便未來改成正式後端系統
+- **Tool Calling**：AI 呼叫後端 API 執行業務動作
+- **AI 與業務邏輯分離**：方便未來 AI Agent 從 n8n 平滑遷移至 Java 或其他 Agent Framework。
+  - 將 AI 能力限制在「決策層」：
+    - AI Agent：
+      - 僅負責語意理解與流程決策
+      - 不直接存取資料庫、不執行業務邏輯
+    - Backend Service：
+      - 封裝所有資料存取與業務規則
+      - 以明確 API 作為 AI 的唯一操作介面
 
 ---
 
@@ -40,12 +61,15 @@
 ### Phase 1：POC（快速驗證）
 - n8n（AI Agent / RAG / Tool Workflow）
 - OpenAI / OpenRouter
+- n8n Vector Store
 - Google Sheets（訂位資料）
 
-### Phase 2：正式後端
+### Phase 2：後端實作
 - Java 17
 - Spring Boot
 - RESTful API
-- Vector DB（pgvector / Qdrant）
+- Vector DB（Qdrant）
+- OpenAI Embeddings
+- Docker（Qdrant / n8n）
 
 ---
