@@ -2,7 +2,7 @@
 - 結合 **AI Agent、RAG（Retrieval-Augmented Generation）** 與 **Tool Calling**
 ---
 
-## 🔍架構演進總覽（POC → Backend）
+## 🔍架構演進（POC → Backend）
 
 ### Phase 1 :（POC）以 **n8n 快速驗證** AI Agent 的行為與互動流程
 
@@ -38,11 +38,11 @@
 
 - **Progressive Architecture**
   - 初期以 n8n 承擔 AI Agent 決策角色
-  - 架構設計可平滑遷移至純 Java-based AI Agent
+  - 架構設計提供未來平滑遷移至純 Java-based AI Agent
 
 ---
 
-## 🧠 核心概念（Core Concepts）
+## 🧠 主要實作概念（Core Concepts）
 
 - **AI Agent**：負責理解使用者意圖與決策
 - **RAG**：用向量資料庫查詢咖啡店菜單與知識
