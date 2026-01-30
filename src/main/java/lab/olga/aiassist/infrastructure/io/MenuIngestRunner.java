@@ -14,7 +14,7 @@ public class MenuIngestRunner implements CommandLineRunner {
 
     private final MenuLoader menuLoader;
     private final EmbeddingProvider openAiEmbeddingProvider;
-    private final QdrantHttpClient qdrantHttpClient; // 你可以沿用你現在 HttpClient 呼叫方式封裝一下
+    private final QdrantHttpClient qdrantHttpClient; 
 
 
     public MenuIngestRunner(MenuLoader menuLoader , EmbeddingProvider embeddingProvider, QdrantHttpClient qdrant) {
