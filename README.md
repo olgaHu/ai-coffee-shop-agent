@@ -14,10 +14,13 @@
 - Tool Calling（訂位等實際業務動作）
 
 ### Phase 2 : Java Backend + Vector DB （目前進度）
+
+![Phase2 Overview](ai-agent-v2.png)
+
 - 📚 Menu 向量資料注入
   - 使用 OpenAI Embeddings（1536-dim）
   - 自製 QdrantHttpClient 將資料 Upsert 至 Qdrant
-- 🔠 向量搜尋（Qdrant）(菜單 Menu Search + Order Confirm API)
+- 🔠 向量搜尋（Qdrant）(先僅限於菜單 Menu Search + Order Confirm API)
   - 實作語意相似度搜尋（Top-K）
   - 回傳結構化菜單資料作為 AI Agent 的 唯一菜單資料來源 
 
