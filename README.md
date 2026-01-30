@@ -1,11 +1,10 @@
 # AI 咖啡店智能助理（AI Coffee Shop Agent）
-咖啡店智能助理 結合 **AI Agent、RAG（Retrieval-Augmented Generation）** 與 **Tool Calling**
-的 Side Project。
+- 結合 **AI Agent、RAG（Retrieval-Augmented Generation）** 與 **Tool Calling**
 ---
 
 ## 🔍架構演進總覽（POC → Backend）
 
-> Phase 1 :（POC）以 n8n 快速驗證 AI Agent 的行為與互動流程
+### Phase 1 :（POC）以 **n8n 快速驗證** AI Agent 的行為與互動流程
 
 ![AI Agent POC Overview](n8n-ai-agent-overview.png)
 
@@ -14,7 +13,7 @@
 - RAG（菜單知識查詢）
 - Tool Calling（訂位等實際業務動作）
 
-> Phase 2 : Java Backend + Vector DB （目前進度）
+### Phase 2 : Java Backend + Vector DB （目前進度）
 - 📚 Menu 向量資料注入
   - 使用 OpenAI Embeddings（1536-dim）
   - 自製 QdrantHttpClient 將資料 Upsert 至 Qdrant
@@ -73,3 +72,18 @@
 - Docker（Qdrant / n8n）
 
 ---
+
+## 下一步計畫（Future Work）
+
+**逐步將 Agent Runtime 收斂至 Java Backend，實作由 LLM 決策工具呼叫的完整 AI Agent**
+
+規劃中的 Agent 能力包含：
+- 接收使用者自然語言輸入（User Message）
+- 呼叫支援 Tool Calling 的 LLM
+- 提供明確的 Tools Schema（例如：`menu_search`、`order_confirm`）
+- 由 LLM 決定是否與如何呼叫對應工具
+- 執行實際業務 Service（Java）
+- 將執行結果回饋給 LLM，生成最終回覆
+
+在 **現有 Java API 穩定後** 逐步導入，  確保資料一致性、業務可測試性與 Agent 行為可控。
+
