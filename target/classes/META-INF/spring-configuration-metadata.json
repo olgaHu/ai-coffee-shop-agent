@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "openai",
+      "type": "lab.olga.aiassist.config.OpenAiProperties",
+      "sourceType": "lab.olga.aiassist.config.OpenAiProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "openai.api-key",
+      "type": "java.lang.String",
+      "sourceType": "lab.olga.aiassist.config.OpenAiProperties"
+    },
+    {
+      "name": "openai.base-url",
+      "type": "java.lang.String",
+      "sourceType": "lab.olga.aiassist.config.OpenAiProperties"
+    },
+    {
+      "name": "openai.embeddings-model",
+      "type": "java.lang.String",
+      "sourceType": "lab.olga.aiassist.config.OpenAiProperties"
+    }
+  ],
+  "hints": []
+}

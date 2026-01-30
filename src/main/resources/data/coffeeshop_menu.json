@@ -1,0 +1,117 @@
+[
+  {
+    "id": "latte",
+    "category": "精品咖啡系列",
+    "name": "經典拿鐵",
+    "alias": ["Latte"],
+    "price": 120,
+    "description": "精選義式配方豆，口感絲滑。",
+    "options": [
+      "全脂奶",
+      "低脂奶",
+      "加價 20 元升級燕麥奶"
+    ],
+    "tags": ["咖啡", "牛奶", "熱門"]
+  },
+  {
+    "id": "yirgacheffe",
+    "category": "精品咖啡系列",
+    "name": "手沖耶加雪菲",
+    "price": 160,
+    "description": "帶有明顯的花香與柑橘酸質，口感清爽。",
+    "options": [],
+    "tags": ["咖啡", "手沖", "花香"]
+  },
+  {
+    "id": "caramel_macchiato",
+    "category": "精品咖啡系列",
+    "name": "焦糖瑪奇朵",
+    "price": 140,
+    "description": "香甜焦糖結合濃醇鮮奶與濃縮咖啡，適合喜歡層次感豐富的客人。",
+    "options": [],
+    "tags": ["咖啡", "焦糖", "甜"]
+  },
+  {
+    "id": "flat_white",
+    "category": "精品咖啡系列",
+    "name": "澳洲小白咖啡",
+    "alias": ["Flat White"],
+    "price": 130,
+    "description": "比拿鐵擁有更細緻的微奶泡，咖啡風味更為濃郁。",
+    "options": [],
+    "tags": ["咖啡", "奶泡", "濃郁"]
+  },
+  {
+    "id": "cold_brew",
+    "category": "精品咖啡系列",
+    "name": "冷萃咖啡",
+    "alias": ["Cold Brew"],
+    "price": 150,
+    "description": "經過 12 小時低溫萃取，口感乾淨順口，帶有淡淡酒香。",
+    "options": [],
+    "tags": ["咖啡", "冷飲", "清爽"]
+  },
+  {
+    "id": "nut_tart",
+    "category": "精選甜點系列",
+    "name": "手工堅果塔",
+    "price": 90,
+    "description": "香酥餅皮搭配焦糖低溫烘焙堅果。",
+    "allergens": ["堅果", "麩質", "蛋"],
+    "tags": ["甜點", "堅果"]
+  },
+  {
+    "id": "lemon_tart",
+    "category": "精選甜點系列",
+    "name": "法式經典檸檬塔",
+    "price": 110,
+    "description": "選用屏東新鮮檸檬，酸甜平衡，口感細緻。",
+    "allergens": ["麩質", "蛋"],
+    "tags": ["甜點", "檸檬"]
+  },
+  {
+    "id": "chocolate_lava",
+    "category": "精選甜點系列",
+    "name": "熔岩巧克力蛋糕",
+    "price": 130,
+    "description": "現點現烤，外皮鬆軟內餡流心，使用 70% 苦甜巧克力。",
+    "allergens": ["麩質", "蛋", "奶"],
+    "tags": ["甜點", "巧克力"]
+  },
+  {
+    "id": "matcha_mille_crepe",
+    "category": "精選甜點系列",
+    "name": "日式抹茶千層",
+    "price": 150,
+    "description": "使用靜岡抹茶粉，層層堆疊出濃郁茶香。",
+    "allergens": ["麩質", "蛋", "奶"],
+    "tags": ["甜點", "抹茶"]
+  },
+  {
+    "id": "basque_cheesecake",
+    "category": "精選甜點系列",
+    "name": "巴斯克乳酪蛋糕",
+    "price": 120,
+    "description": "重乳酪口感，表面帶有焦糖化的焦香味。",
+    "allergens": ["奶", "蛋"],
+    "tags": ["甜點", "乳酪"]
+  },
+  {
+    "id": "policy_minimum_order",
+    "category": "店內政策",
+    "name": "最低消費",
+    "description": "每人需消費一杯飲品。"
+  },
+  {
+    "id": "policy_time_limit",
+    "category": "店內政策",
+    "name": "用餐限制",
+    "description": "限時 90 分鐘，若無候位則不限時。"
+  },
+  {
+    "id": "policy_pet_friendly",
+    "category": "店內政策",
+    "name": "寵物政策",
+    "description": "寵物友善，需使用牽繩或推車，禁止寵物上餐桌。"
+  }
+]

@@ -1,0 +1,8 @@
+qdrant:
+  base-url: http://localhost:6333
+  collection: coffeeshop_menu
+
+openai:
+  base-url: https://api.openai.com/v1
+  api-key: ${OPENAI_API_KEY}
+  embeddings-model: text-embedding-3-small
